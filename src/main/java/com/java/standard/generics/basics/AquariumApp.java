@@ -3,7 +3,7 @@ package com.java.standard.generics.basics;
 public class AquariumApp {
     public static void main(String[] args) {
         /*  In the same aquarium, we are placing shark and goldfish. It's weired. Because shark can eat goldfish.
-            So, to place same type of things we need to use generics.*/
+            So, to place the same type of things we need to use generics.*/
 
         Aquarium aquarium = new Aquarium(new GoldFish(), new SharkFish());
         GoldFish goldFish = (GoldFish) aquarium.getFish1();
