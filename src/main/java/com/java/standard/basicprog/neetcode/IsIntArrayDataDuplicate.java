@@ -4,10 +4,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-/*  :Contains Duplicate:
-   Given an integer array nums,
-   return true if the value appears at least twice in the array,
-   return false if every element is distinct.
+/*  Contains Duplicate:
+    =======================
+       Given an integer array nums,
+       return true if the value appears at least twice in the array,
+       return false if every element is distinct.
 
     Common Big O Time Complexities
     ================================
@@ -34,49 +35,46 @@ public class IsIntArrayDataDuplicate {
     }
 
     // O(n2)
-    private static boolean isArrayContainsDuplicateData(int[] intArr) {
+    private static void isArrayContainsDuplicateData(int[] numbs) {
         boolean containsDuplicate = false;
-        for (int i = 0; i < intArr.length; i++) {
-            for (int j = i+1; j < intArr.length; j++) {
-                if (intArr[i] == intArr[j]) {
+        for (int i = 0; i < numbs.length; i++) {
+            for (int j = i+1; j < numbs.length; j++) {
+                if (numbs[i] == numbs[j]) {
                     containsDuplicate = true;
                     break;
                 }
             }
         }
         System.out.println("Array contains duplicate?: " + containsDuplicate);
-        return containsDuplicate;
     }
 
     // O(n log n)
-    private static boolean isArrayContainsDuplicateData_UsingSorting(int[] intArr) {
-        System.out.println("Before sort: " + Arrays.toString(intArr));
-        Arrays.sort(intArr);
-        System.out.println("After sort: " + Arrays.toString(intArr));
+    private static void isArrayContainsDuplicateData_UsingSorting(int[] numbs) {
+        System.out.println("Before sort: " + Arrays.toString(numbs));
+        Arrays.sort(numbs);
+        System.out.println("After sort: " + Arrays.toString(numbs));
 
         boolean containsDuplicate = false;
-        for (int i = 0; i < intArr.length -1; i++) {
-            if (intArr[i] == intArr[i + 1]) {
+        for (int i = 0; i < numbs.length -1; i++) {
+            if (numbs[i] == numbs[i + 1]) {
                 containsDuplicate = true;
                 break;
             }
         }
         System.out.println("Array contains duplicate?: " + containsDuplicate);
-        return containsDuplicate;
     }
 
     // O(n)
-    private static boolean isArrayContainsDuplicateData_UsingHashSet(int[] intArr) {
+    private static void isArrayContainsDuplicateData_UsingHashSet(int[] numbs) {
         Set<Integer> uniqueSet = new HashSet<>();
 
         boolean containsDuplicate = false;
-        for (int i : intArr) {
+        for (int i : numbs) {
             if(!uniqueSet.add(i)) {
                containsDuplicate = true;
                break;
             }
         }
         System.out.println("Array contains duplicate?: " + containsDuplicate);
-        return containsDuplicate;
     }
 }
