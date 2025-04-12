@@ -8,6 +8,17 @@ import java.util.Set;
    Given an integer array nums,
    return true if the value appears at least twice in the array,
    return false if every element is distinct.
+
+    Common Big O Time Complexities
+    ================================
+       O(1) - Constant Time
+       O(log n) - Logarithmic Time
+       O(n) - Linear Time
+       O(n log n) - Linearithmic Time
+       O(n²) - Quadratic Time
+       O(n³) - Cubic Time
+       O(2ⁿ) - Exponential Time
+       O(n!) - Factorial Time
 */
 
 public class IsIntArrayDataDuplicate {
